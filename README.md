@@ -1,6 +1,6 @@
 # Hobby List
-Lab 03: SystemIO and local file persistence  
-collaborators: Harry Cogswell, Brandon Johnson, Rosalyn Johnson, Brody Rebne
+##### Lab 03: SystemIO and local file persistence  
+#### collaborators: Harry Cogswell, Brandon Johnson, Rosalyn Johnson, Brody Rebne
 
 ## Summary
 This is a C# Console Application that lets a user create a list of hobbies, add hobbies to that list, remove them from the list, and delete the list as they see fit. A user should find the same list of hobbies every time they open the app, until they modify or delete it!
