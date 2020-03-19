@@ -24,15 +24,17 @@ namespace Lab03_SystemIO
             Console.WriteLine("List of hobbies");
 
             bool action = true;
+            string path = "../../../hobbieList.txt";
+            string path2 = "../../../errorLog.txt";
+
             while (action)
             {
                 // Check for existing list
-                // string curFile = @"c:\temp\test.txt";
-                //Console.WriteLine(File.Exists(curFile) ? "File exists." : "File does not exist.");
                 if (!File.Exists("../../../hobbieList.txt")) {
                     Console.WriteLine("Let's create a new list. press any key.");
-                    string ynInput = Console.ReadLine();
-                    CreateList();
+                    Console.ReadLine();
+                    File.WriteAllText(path, "Hobbie List:\n");
+                    File.WriteAllText(path2, "Errors:\n");
                 }
 
                 // Else
@@ -40,7 +42,8 @@ namespace Lab03_SystemIO
                 Console.WriteLine("1. View list of hobbies");
                 Console.WriteLine("2. Add hobbie");
                 Console.WriteLine("3. Delete hobbie");
-                Console.WriteLine("4. Exit hobbie list");
+                Console.WriteLine("4. Delete hobbie list");
+                Console.WriteLine("5. Exit");
 
                 string numInput = Console.ReadLine();
 
@@ -51,15 +54,27 @@ namespace Lab03_SystemIO
                 {
                     case 1:
                         Console.WriteLine("Your list of hobbies are ...");
-                        // Make conditional for if the list is empty
+                        string myList = File.ReadAllText(path);
+                        Console.WriteLine(myList);
                         break;
 
                     case 2:
+                        Console.WriteLine("What hobbie would you like to add?");
+                        hobbie = Console.ReadLine();
+                        AddItem(hobbie, path, path2);
                         Console.WriteLine("You just added a hobbie");
                         break;
 
                     case 3:
-                        Console.WriteLine("You deleted a hobbie");
+                        Console.WriteLine("Which hobbie would you like to remove?");
+                        hobbie = Console.ReadLine();
+                        RemoveItem(hobbie, path, path2);
+                        break;
+
+                    case 4:
+                        File.Delete(path);
+                        Console.WriteLine("Your list was deleted");
+                        Environment.Exit(0);
                         break;
 
                     default:
@@ -68,10 +83,62 @@ namespace Lab03_SystemIO
                 }
             }
         }
-        static void CreateList()
+        static void AddItem(string hobbie, string path, string path2)
         {
-            string path = "../../../hobbieList.txt";
-            File.WriteAllText(path, "Hobbie Lit:\n");
+            string[] list = File.ReadAllLines(path);
+            bool found = false;
+            foreach(string item in list)
+            {
+                if (item == hobbie)
+                {
+                    Console.WriteLine("You've already added that hobbie.");
+                    using (StreamWriter sw = File.AppendText(path2))
+                    {
+                        sw.WriteLine($"{hobbie} this was already in your file. ERROR DOES NOT EXIST.");
+                    };
+                    found = (true);
+                    break;
+                }
+            }
+            if (!found)
+            {
+                using (StreamWriter sw = File.AppendText(path))
+                {
+                    sw.WriteLine(hobbie);
+                };
+            }
+        }
+        static void RemoveItem(string hobbieToRemove, string path, string path2)
+        {
+            int repeatInput = 0;
+            string[] words = File.ReadAllLines(path);
+            string[] newWords = new string[words.Length - 1];
+            bool found = false;
+           
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (words[i] != hobbieToRemove || repeatInput == 0)
+                {
+                    newWords[repeatInput] = words[i];
+                    if (repeatInput != newWords.Length - 1)
+                        repeatInput++;
+                }
+                else
+                    found = true;
+            }
+            if (found)
+            {
+                File.WriteAllLines(path, newWords);
+                Console.WriteLine("You deleted a hobbie");
+            }
+            else
+            {
+                Console.WriteLine("That hobbie don't exist, yo.");
+                using (StreamWriter sw = File.AppendText(path2))
+                {
+                    sw.WriteLine($"{hobbieToRemove} this was not in your file. ERROR DOES NOT EXIST.");
+                };
+            }
         }
     }
 }
