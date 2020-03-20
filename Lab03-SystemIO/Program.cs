@@ -26,10 +26,12 @@ namespace Lab03_SystemIO
         {
             Console.WriteLine("List of hobbies");
 
+            // checker for menu rewriting loop
             bool action = true;
             string hobbieListPath = "../../../hobbieList.txt";
             string errorLogPath = "../../../errorLog.txt";
 
+            // writes main menu until program is ended by user
             while (action)
             {
                 // Check for existing list
@@ -48,6 +50,8 @@ namespace Lab03_SystemIO
                 Int32.TryParse(numInput, out int number);
 
                 string hobbie;
+                
+                // executing method based on user input
                 switch (number)
                 {
                     case 1:
@@ -80,6 +84,12 @@ namespace Lab03_SystemIO
                 }
             }
         }
+
+        /// <summary>
+        /// Creates a new hobbies list if none exists
+        /// </summary>
+        /// <param name="listPath">Filepath of list to write to</param>
+        /// <param name="errorPath">Filepath of error log</param>
         public static void CreateFileIfDoesntExist(string listPath, string errorPath)
         {
             if (!File.Exists("../../../hobbieList.txt"))
@@ -90,9 +100,18 @@ namespace Lab03_SystemIO
                 File.WriteAllText(errorPath, "Errors:\n");
             }
         }
+
+        /// <summary>
+        /// Adds a new item to an existing hobbie list
+        /// </summary>
+        /// <param name="hobbie">The string value of the hobbie to add</param>
+        /// <param name="path">The filepath of the hobbie list</param>
+        /// <param name="path2">The filepath of the error log</param>
         public static void AddItem(string hobbie, string path, string path2)
         {
             string[] list = File.ReadAllLines(path);
+
+            // searches hobbie list for duplicates
             bool found = false;
             foreach (string item in list)
             {
@@ -107,16 +126,28 @@ namespace Lab03_SystemIO
                     break;
                 }
             }
+
+            // adds hobbie if not a duplicate
             if (!found)
                 WriteHobbie(hobbie);
         }
+
+        /// <summary>
+        /// Removes a hobbie from an existing list
+        /// </summary>
+        /// <param name="hobbieToRemove">String value of hobbie to be removed</param>
+        /// <param name="path">Filepath of hobbie list</param>
+        /// <param name="path2">Filepath of error log</param>
         public static void RemoveItem(string hobbieToRemove, string path, string path2)
         {
             int repeatInput = 0;
             string[] words = File.ReadAllLines(path);
+
+            // creating new array to render non-deleted hobbies to
             string[] newWords = new string[words.Length - 1];
             bool found = false;
 
+            // buids array from existing values that don't match value to be deleted
             for (int i = 0; i < words.Length; i++)
             {
                 if (words[i] != hobbieToRemove || repeatInput == 0)
@@ -128,12 +159,16 @@ namespace Lab03_SystemIO
                 else
                     found = true;
             }
+
+            // write new array to list if value is deleted
             if (found)
             {
                 File.WriteAllLines(path, newWords);
                 Console.WriteLine("You deleted a hobbie");
             }
             else
+
+            // write original array if no value is deleted
             {
                 Console.WriteLine("That hobbie don't exist, yo.");
                 using (StreamWriter sw = File.AppendText(path2))
@@ -144,9 +179,9 @@ namespace Lab03_SystemIO
         }
 
         /// <summary>
-        /// 
+        /// Writes a hobbie to the list
         /// </summary>
-        /// <param name="hobbiesList"></param>
+        /// <param name="hobbie">String value of hobbie to add</param>
         public static void WriteHobbie(string hobbie)
         {
             string path = "../../../hobbieList.txt";

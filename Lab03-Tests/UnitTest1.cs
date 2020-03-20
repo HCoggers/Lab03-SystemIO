@@ -7,6 +7,7 @@ namespace Lab03_Tests
 {
     public class UnitTest1
     {
+        // ensures the app creates a file if none exists
         [Fact]
         public void CanCreateANewFile()
         {
@@ -15,6 +16,7 @@ namespace Lab03_Tests
             Assert.True(File.Exists("../../../hobbieList.txt"));
         }
 
+        // ensures the app can write new hobbies to the list
         [Fact]
         public void CanWriteHobbie()
         {
@@ -23,6 +25,7 @@ namespace Lab03_Tests
             Assert.Equal("testString", File.ReadAllLines("../../../hobbieList.txt")[^1]);
         }
 
+        // ensures the app prevents the user from adding a duplicate hobby
         [Fact]
         public void DoesntAddDuplicate()
         {
@@ -32,6 +35,7 @@ namespace Lab03_Tests
             Assert.Equal(length, File.ReadAllLines("../../../hobbieList.txt").Length);
         }
 
+        // ensures the app can delete a hobby from the list
         [Fact]
         public void CanDeleteHobbie()
         {
@@ -40,6 +44,7 @@ namespace Lab03_Tests
             Assert.NotEqual("testString2", File.ReadAllLines("../../../hobbieList.txt")[^1]);
         }
 
+        // ensures the app doesn't break if it tries to delete a hobby that doesn't exist
         [Fact]
         public void DoesntDeleteNonexistant()
         {
