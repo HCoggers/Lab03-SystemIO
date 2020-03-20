@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab03-SystemIO", "Lab03-SystemIO\Lab03-SystemIO.csproj", "{CDFFD8F6-5A67-4D99-9FB8-E4F873F38C78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab03-SystemIO", "Lab03-SystemIO\Lab03-SystemIO.csproj", "{CDFFD8F6-5A67-4D99-9FB8-E4F873F38C78}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab03-Tests", "Lab03-Tests\Lab03-Tests.csproj", "{37B0F6EC-60A2-4AD3-9D4E-17FB7D2FDEDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{CDFFD8F6-5A67-4D99-9FB8-E4F873F38C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDFFD8F6-5A67-4D99-9FB8-E4F873F38C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDFFD8F6-5A67-4D99-9FB8-E4F873F38C78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37B0F6EC-60A2-4AD3-9D4E-17FB7D2FDEDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37B0F6EC-60A2-4AD3-9D4E-17FB7D2FDEDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37B0F6EC-60A2-4AD3-9D4E-17FB7D2FDEDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37B0F6EC-60A2-4AD3-9D4E-17FB7D2FDEDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
