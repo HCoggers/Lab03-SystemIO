@@ -9,3 +9,16 @@ C:\Users\harry\Desktop\Code401\Week1\Lab03-SystemIO\Lab03-SystemIO\obj\Debug\net
 C:\Users\harry\Desktop\Code401\Week1\Lab03-SystemIO\Lab03-SystemIO\obj\Debug\netcoreapp3.1\Lab03-SystemIO.AssemblyInfo.cs
 C:\Users\harry\Desktop\Code401\Week1\Lab03-SystemIO\Lab03-SystemIO\obj\Debug\netcoreapp3.1\Lab03-SystemIO.dll
 C:\Users\harry\Desktop\Code401\Week1\Lab03-SystemIO\Lab03-SystemIO\obj\Debug\netcoreapp3.1\Lab03-SystemIO.pdb
+C:\Users\fatswimdude\Source\Repos\HCoggers\Lab03-SystemIO\Lab03-SystemIO\bin\Debug\netcoreapp3.1\Lab03-SystemIO.exe
+C:\Users\fatswimdude\Source\Repos\HCoggers\Lab03-SystemIO\Lab03-SystemIO\bin\Debug\netcoreapp3.1\Lab03-SystemIO.deps.json
+C:\Users\fatswimdude\Source\Repos\HCoggers\Lab03-SystemIO\Lab03-SystemIO\bin\Debug\netcoreapp3.1\Lab03-SystemIO.runtimeconfig.json
+C:\Users\fatswimdude\Source\Repos\HCoggers\Lab03-SystemIO\Lab03-SystemIO\bin\Debug\netcoreapp3.1\Lab03-SystemIO.runtimeconfig.dev.json
+C:\Users\fatswimdude\Source\Repos\HCoggers\Lab03-SystemIO\Lab03-SystemIO\bin\Debug\netcoreapp3.1\Lab03-SystemIO.dll
+C:\Users\fatswimdude\Source\Repos\HCoggers\Lab03-SystemIO\Lab03-SystemIO\bin\Debug\netcoreapp3.1\Lab03-SystemIO.pdb
+C:\Users\fatswimdude\Source\Repos\HCoggers\Lab03-SystemIO\Lab03-SystemIO\obj\Debug\netcoreapp3.1\Lab03-SystemIO.csprojAssemblyReference.cache
+C:\Users\fatswimdude\Source\Repos\HCoggers\Lab03-SystemIO\Lab03-SystemIO\obj\Debug\netcoreapp3.1\Lab03-SystemIO.csproj.CoreCompileInputs.cache
+C:\Users\fatswimdude\Source\Repos\HCoggers\Lab03-SystemIO\Lab03-SystemIO\obj\Debug\netcoreapp3.1\Lab03-SystemIO.AssemblyInfoInputs.cache
+C:\Users\fatswimdude\Source\Repos\HCoggers\Lab03-SystemIO\Lab03-SystemIO\obj\Debug\netcoreapp3.1\Lab03-SystemIO.AssemblyInfo.cs
+C:\Users\fatswimdude\Source\Repos\HCoggers\Lab03-SystemIO\Lab03-SystemIO\obj\Debug\netcoreapp3.1\Lab03-SystemIO.dll
+C:\Users\fatswimdude\Source\Repos\HCoggers\Lab03-SystemIO\Lab03-SystemIO\obj\Debug\netcoreapp3.1\Lab03-SystemIO.pdb
+C:\Users\fatswimdude\Source\Repos\HCoggers\Lab03-SystemIO\Lab03-SystemIO\obj\Debug\netcoreapp3.1\Lab03-SystemIO.genruntimeconfig.cache
