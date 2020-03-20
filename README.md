@@ -5,7 +5,7 @@
 ## Summary
 This is a C# Console Application that lets a user create a list of hobbies, add hobbies to that list, remove them from the list, and delete the list as they see fit. A user should find the same list of hobbies every time they open the app, until they modify or delete it!
 
-**_(image)_**
+![startScreen](https://i.imgur.com/ntjYmW6.png)
 
 ## Directions
 - In order to install this app and try it for yourself, clone this repo using
